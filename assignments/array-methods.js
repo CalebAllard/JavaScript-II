@@ -103,7 +103,40 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+  // make name and comany show up together
+  let nameAndCompany = [];
+  runners.forEach((item) => {
+    nameAndCompany.push(`${item.first_name} from ${item.company_name}`);
+  });
+  console.log(nameAndCompany);
 // Problem 2
 
+  function nameByOrder(arr){
+    let nameInOrder = [];
+    nameInOrder = arr.map((element)=>{
+      
+      
+      
+      return element.first_name;
+
+    });
+    
+    return nameInOrder.sort();
+
+  }
+
+  console.log(nameByOrder(runners));
 // Problem 3
+function thisFunction(array){
+let tick = 0;
+let ammount = null;
+let tepString = runners.forEach((item) =>{
+  
+  ammount = item.donation + ammount;
+  tick++;
+   
+});
+return `We got ${tick} amount of donation at ${ammount} total`
+}
+
+console.log(thisFunction(runners));
